@@ -11,3 +11,19 @@ REST API Django для отслеживания привычек, основан
 5. Настройте файл .env
 6. Запустите миграцию: `python manage.py migrate`
 7. Запустите сервер: `python manage.py runserver`
+
+## Производственная настройка
+
+1. Установите PostgreSQL и Redis
+2. Настройте .env с производственными настройками
+3. Запустите миграцию: `python manage.py migrate`
+4. Запустите Redis: `redis-server`
+5. Запустите Celery: "celery -A config worker -l info"
+6. Запустите Celery Beat: `celery -A config beat -l info`
+7. Запустите сервер: "python manage.py runserver`
+
+## Аутентификация
+
+- POST /api/auth/jwt/create/ - Получить пару токенов
+- POST /api/auth/jwt/refresh/ - Обновить токен
+- Использовать токен на предъявителя в заголовке авторизации
