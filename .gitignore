@@ -7,6 +7,6 @@ venv/
 env/
 *.sqlite3
 db.sqlite3
-.env
 migrations/
 *.log
+.env
