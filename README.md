@@ -1,30 +1,24 @@
-# Отслеживание привычек
+# Habit Tracker
 
-REST API Django для отслеживания привычек, основанный на "Атомарных привычках" Джеймса Клира
+A Django REST API for tracking habits based on "Atomic Habits" by James Clear.
 
-## Установка
+## Project Structure
 
-1. Клонируем репозиторий
-2. Создаем виртуальную среду: `python -m venv venv`
-3. Активируем среду
-4. Требования к установке: `pip install -r requirements.txt`
-5. Настройте файл .env
-6. Запустите миграцию: `python manage.py migrate`
-7. Запустите сервер: `python manage.py runserver`
+- `users/`: Manages user profiles and Telegram integration
+- `habits/`: Core habit tracking functionality
+- `telegram_bot/`: Handles Telegram notifications
+- `config/`: Project settings and configuration
 
-## Производственная настройка
+## Local Setup
 
-1. Установите PostgreSQL и Redis
-2. Настройте .env с производственными настройками
-3. Запустите миграцию: `python manage.py migrate`
-4. Запустите Redis: `redis-server`
-5. Запустите Celery: "celery -A config worker -l info"
-6. Запустите Celery Beat: `celery -A config beat -l info`
-7. Запустите сервер: "python manage.py runserver`
+### Prerequisites
 
-## Аутентификация
+- Docker
+- Docker Compose
 
-- POST /api/auth/jwt/create/ - Получить пару токенов
-- POST /api/auth/jwt/refresh/ - Обновить токен
-- Использовать токен на предъявителя в заголовке авторизации
- 
+### Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/lansh1rr3/course_2.git
+   cd course_2/habit_tracker
